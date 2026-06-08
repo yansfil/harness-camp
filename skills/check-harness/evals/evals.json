@@ -5,7 +5,7 @@
       "id": 1,
       "name": "default-questionnaire-flow",
       "prompt": "/check-harness",
-      "expected_output": "AskUserQuestion으로 8개 질문을 한 번에 하나씩 묻고, 현재 프로젝트와 세션 메타데이터를 가볍게 확인한 뒤 .harness/check-reports/check-harness-{date}/report.md를 생성한다.",
+      "expected_output": "Q1은 선택지 없이 예시만 보여주고 주관식으로 답을 받는다. Q2-Q8은 AskUserQuestion으로 한 번에 하나씩 묻고, 현재 프로젝트와 세션 메타데이터를 가볍게 확인한 뒤 .harness/check-reports/check-harness-{date}/report.md를 생성한다.",
       "files": []
     },
     {

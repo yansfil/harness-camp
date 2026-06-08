@@ -8,7 +8,8 @@ concrete improvement to discuss or implement during the workshop.
 
 ## Rules
 
-- Ask the 8 questions one by one with `AskUserQuestion`.
+- Ask Q1 as a free-form question with examples only.
+- Ask Q2-Q8 one by one with `AskUserQuestion`.
 - Prefer Korean unless the user is using English.
 - If the user already answered a question in the prompt, record the answer and
   skip asking that question.
@@ -25,13 +26,14 @@ concrete improvement to discuss or implement during the workshop.
 
 Question: `현재 에이전트를 사용하면서 가장 크게 느끼는 문제의식이 있다면?`
 
-Use options:
+Ask this as free text, not a multiple-choice question. Show examples only:
 
-- `결과 품질` — 원하는 결과가 안정적으로 안 나온다.
-- `시간/통제` — 계속 지켜봐야 해서 오래 맡기기 어렵다.
-- `워크플로우 부재` — 매번 어떻게 시킬지 새로 고민한다.
+- `예: 결과 품질이 들쭉날쭉하다.`
+- `예: 오래 맡기기 어렵고 계속 지켜봐야 한다.`
+- `예: 매번 어떻게 시킬지 새로 고민한다.`
+- `예: 검증을 내가 다 해야 해서 시간이 줄지 않는다.`
 
-Record as free text if the user chooses Other.
+Record the user's answer as-is and summarize the signal in the report.
 
 ### Q2. Starting Work
 
