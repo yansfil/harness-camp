@@ -8,7 +8,6 @@ Claude Code용 Harness Engineering 워크숍 스킬 repo.
 .claude-plugin/plugin.json  # Claude Code plugin manifest
 skills/
   check-harness/            # 워크숍 starter. 8개 질문 + 프로젝트/세션 패턴 점검
-  harness-new/              # harness-session에서 가져온 intake/project audit 변형
   scaffold/                 # 새 프로젝트 구조 + Harness scaffold
   specify/                  # spec.md 생성
   doc-drift/                # context/docs drift 점검

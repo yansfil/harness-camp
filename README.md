@@ -12,7 +12,6 @@ Harness Engineering 워크숍을 위한 Claude Code 스킬 묶음.
 |---|---|
 | `skills/check-harness/` | 워크숍 starter. 8개 질문 + 프로젝트/세션 패턴 점검 |
 | `skills/check-harness/references/questionnaire.md` | 질문지와 리포트 형식 |
-| `skills/harness-new/` | 기존 `harness-session`의 워크숍 intake/project audit 변형 |
 | `skills/scaffold/` | 새 프로젝트 구조와 Harness 문서/규칙을 설계하는 scaffold 스킬 |
 | `skills/specify/` | 목표를 `spec.md` 중심의 실행 계획으로 구조화 |
 | `skills/doc-drift/` | `CLAUDE.md`, memory, skills, plugin 문서의 drift 점검 |
