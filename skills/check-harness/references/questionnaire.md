@@ -15,8 +15,9 @@ workshop.
 - If the user already answered a question in the prompt, record the answer and
   skip asking that question.
 - Do not use subagents.
-- Do not read prompt text from Claude Code session logs. Only inspect
-  timestamps, tool names, and tool input keys when doing session analysis.
+- For session analysis, inspect user message text when available. Do not read
+  assistant prose, tool outputs, or full file contents from session logs.
+- Summarize user-message patterns; do not quote long raw prompts in the report.
 - Do not modify the target project except writing the final report under
   `.harness/check-reports/`.
 - Keep the final diagnosis practical, not judgmental.
@@ -136,20 +137,25 @@ Collect simple evidence:
 - Are sensitive files ignored?
 - Is there a handoff, report, or lesson-learned place?
 
-## Lightweight Session Pattern Analysis
+## User-Input Session Pattern Analysis
 
-If Claude Code session logs are available, inspect only metadata. Do not read
-user prompt text or assistant prose.
+If Claude Code session logs are available, focus on the user's own messages.
+The goal is to understand how the participant actually asks agents to work.
+Read only user message text plus minimal metadata such as timestamps and tool
+names. Do not read assistant prose, tool outputs, or full file contents stored
+inside session logs.
 
 Useful signals:
 
 - recent session count for this project
-- common tool names
-- whether `AskUserQuestion` appears
-- whether `Task`/`Agent`/subagent-style delegation appears
-- whether shell/test/build/git commands appear near the end of sessions
-- whether sessions are mostly short or long
-- repeated tool patterns that look like automation candidates
+- common request types and repeated workflows
+- whether initial asks are vague, clear, or process-driven
+- whether the user gives background, constraints, acceptance criteria, or examples
+- whether the user asks the agent to clarify first
+- whether the user asks for verification, QA, commit, push, deploy, or browser checks
+- whether the user delegates longer work or keeps asking for small step-by-step changes
+- repeated user requests that look like candidates for a skill, command, hook, or doc rule
+- optional supporting metadata: common tool names, session count, and whether sessions are mostly short or long
 
 Prefer quick shell commands over large parsing. If session paths are hard to
 map, say `session evidence unavailable` and continue.
@@ -217,10 +223,11 @@ Template:
 ## 3. Session Pattern Evidence
 
 - Recent sessions:
-- Common tool patterns:
-- Planning signal:
-- Delegation signal:
-- Verification signal:
+- User request patterns:
+- Initial instruction clarity:
+- Context/constraint signal:
+- Clarification signal:
+- Verification/delegation signal:
 - Automation candidates:
 
 ## 4. 6-Axis Snapshot

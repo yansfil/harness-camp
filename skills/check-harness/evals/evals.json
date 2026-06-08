@@ -19,7 +19,7 @@
       "id": 3,
       "name": "no-subagents",
       "prompt": "하네스 뭐가 부족한지 봐줘. 프로젝트랑 세션 패턴만 가볍게 봐줘.",
-      "expected_output": "Agent나 Task를 쓰지 않고 Read/Grep/Glob/Bash로 프로젝트 표면과 세션 tool-use 메타데이터만 확인한다. HTML은 만들지 않는다.",
+      "expected_output": "Agent나 Task를 쓰지 않고 Read/Grep/Glob/Bash로 프로젝트 표면을 확인한다. 세션 로그가 있으면 사용자 메시지 텍스트와 최소 메타데이터만 보고, assistant prose/tool output은 읽지 않는다. HTML은 만들지 않는다.",
       "files": []
     }
   ]
