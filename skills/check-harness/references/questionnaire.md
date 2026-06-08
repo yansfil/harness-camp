@@ -3,8 +3,9 @@
 This is the source of truth for `/check-harness`.
 
 Goal: help a workshop participant see how they currently use AI agents, compare
-that self-assessment with lightweight project/session evidence, and choose one
-concrete improvement to discuss or implement during the workshop.
+that self-assessment with lightweight project/session evidence, and identify a
+short list of concrete improvements to discuss or implement during the
+workshop.
 
 ## Rules
 
@@ -237,12 +238,15 @@ Template:
 
 {One short paragraph.}
 
-## 6. Recommended Workshop Task
+## 6. Recommended Improvements
 
-- Task:
-- Why:
-- Done when:
-- Expected effect:
+List 3-5 improvements. Keep them concrete enough to start during the workshop.
+
+| Priority | Improvement | Axis | Why | First action | Done when |
+|---|---|---|---|---|---|
+| 1 | ... | ... | ... | ... | ... |
+| 2 | ... | ... | ... | ... | ... |
+| 3 | ... | ... | ... | ... | ... |
 
 ## 7. Pair Discussion
 
@@ -251,4 +255,4 @@ Template:
 3. 이 개선이 다음 AI 작업에서 어떻게 체감될까?
 ```
 
-In chat, show only TL;DR, report path, and the recommended workshop task.
+In chat, show only TL;DR, report path, and the top recommended improvements.

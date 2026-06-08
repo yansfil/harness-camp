@@ -113,7 +113,7 @@ npx -y skills list --global --agent claude-code
 ## Workshop Flow
 
 1. 참가자가 본인 프로젝트에서 `/check-harness`를 실행한다.
-2. 리포트의 가장 약한 축과 추천 워크숍 과제를 확인한다.
+2. 리포트의 가장 약한 축과 추천 개선사항을 확인한다.
 3. 2인 페어로 서로의 리포트를 리뷰한다.
 4. 개선 과제들을 선정한다.
 5. 개선 후 Before/After를 공유한다.
