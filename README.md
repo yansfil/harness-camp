@@ -2,14 +2,23 @@
 
 Harness Engineering 워크숍을 위한 Claude Code 스킬 묶음.
 
-현재는 `check-harness` 하나로 시작한다. 8개 질문으로 사용자의 현재 AI 활용 방식을 먼저 묻고, 현재 프로젝트와 세션 패턴을 가볍게 확인한 뒤 워크숍용 리포트를 만든다.
+`check-harness`를 워크숍 starter로 둔다. 8개 질문으로 사용자의 현재 AI 활용 방식을 먼저 묻고, 현재 프로젝트와 세션 패턴을 가볍게 확인한 뒤 워크숍용 리포트를 만든다.
+
+나머지 스킬은 `harness-session`에서 참고용으로 함께 가져온다. 워크숍에서는 우선 `check-harness`로 시작하고, 필요할 때만 다른 스킬을 꺼내 쓰는 구성이 기본이다.
 
 ## Included
 
 | Path | Purpose |
 |---|---|
-| `skills/check-harness/` | 8개 질문 + 프로젝트/세션 패턴 점검 스킬 |
+| `skills/check-harness/` | 워크숍 starter. 8개 질문 + 프로젝트/세션 패턴 점검 |
 | `skills/check-harness/references/questionnaire.md` | 질문지와 리포트 형식 |
+| `skills/harness-new/` | 기존 `harness-session`의 워크숍 intake/project audit 변형 |
+| `skills/scaffold/` | 새 프로젝트 구조와 Harness 문서/규칙을 설계하는 scaffold 스킬 |
+| `skills/specify/` | 목표를 `spec.md` 중심의 실행 계획으로 구조화 |
+| `skills/doc-drift/` | `CLAUDE.md`, memory, skills, plugin 문서의 drift 점검 |
+| `skills/qa/` | 웹/앱/CLI 대상 QA, 버그 탐색, 수정 검증 흐름 |
+| `skills/agent-orchestrate/` | 복잡한 작업의 순차/병렬/팀 실행 패턴 선택 |
+| `skills/deep-interview/` | 요구사항이 모호할 때 Socratic interview로 명료화 |
 
 ## check-harness
 
@@ -52,6 +61,26 @@ npx -y skills add https://github.com/yansfil/harness-camp --list
 ```bash
 npx -y skills add https://github.com/yansfil/harness-camp \
   --skill check-harness \
+  --agent claude-code \
+  --copy \
+  -y
+```
+
+전체 스킬을 한 번에 설치하려면 `--skill '*'`를 사용한다.
+
+```bash
+npx -y skills add https://github.com/yansfil/harness-camp \
+  --skill '*' \
+  --agent claude-code \
+  --copy \
+  -y
+```
+
+일부만 고를 수도 있다.
+
+```bash
+npx -y skills add https://github.com/yansfil/harness-camp \
+  --skill check-harness scaffold doc-drift \
   --agent claude-code \
   --copy \
   -y
