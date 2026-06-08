@@ -37,7 +37,45 @@ Harness Engineering 워크숍을 위한 Claude Code 스킬 묶음.
 
 ## Usage
 
-Claude Code에서 이 repo를 플러그인으로 설치한 뒤, 점검하고 싶은 프로젝트에서 실행한다.
+Claude Code에서 이 repo의 스킬을 설치한 뒤, 점검하고 싶은 프로젝트에서 실행한다.
+
+### Install with `npx skills`
+
+설치 전에 repo에서 발견되는 스킬을 확인한다.
+
+```bash
+npx -y skills add https://github.com/yansfil/harness-camp --list
+```
+
+점검하고 싶은 프로젝트 루트에서 project-level로 설치한다.
+
+```bash
+npx -y skills add https://github.com/yansfil/harness-camp \
+  --skill check-harness \
+  --agent claude-code \
+  --copy \
+  -y
+```
+
+모든 프로젝트에서 쓰고 싶으면 global로 설치한다.
+
+```bash
+npx -y skills add https://github.com/yansfil/harness-camp \
+  --global \
+  --skill check-harness \
+  --agent claude-code \
+  --copy \
+  -y
+```
+
+설치 확인:
+
+```bash
+npx -y skills list --agent claude-code
+npx -y skills list --global --agent claude-code
+```
+
+설치 후 Claude Code를 새로 열고 실행한다.
 
 ```text
 /check-harness
