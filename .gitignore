@@ -1,0 +1,4 @@
+.DS_Store
+.harness/check-reports/
+.harness/harness-new-reports/
+/tmp/
