@@ -3,23 +3,23 @@
   "evals": [
     {
       "id": 1,
-      "name": "default-scope-asks",
+      "name": "default-questionnaire-flow",
       "prompt": "/check-harness",
-      "expected_output": "Phase 0에서 AskUserQuestion으로 스코프 묻고, 선택된 스코프에 맞는 서브에이전트를 병렬 실행 후 리포트 파일 생성",
+      "expected_output": "AskUserQuestion으로 8개 질문을 한 번에 하나씩 묻고, 현재 프로젝트와 세션 메타데이터를 가볍게 확인한 뒤 .harness/check-reports/check-harness-{date}/report.md를 생성한다.",
       "files": []
     },
     {
       "id": 2,
-      "name": "overall-scope-explicit",
-      "prompt": "/check-harness overall — 내 클로드 코드 전체 설정 점검해줘. 어떤 스킬이 죽어있고 어떻게 일시키고 있는지 보고 싶어.",
-      "expected_output": "Per-Project 서브에이전트(CONTEXT, AUTOMATION)는 안 띄우고, Overall 2개(PORTFOLIO, SESSION)만 병렬 실행. 리포트에 Portfolio Health + Execution Pattern만 포함",
+      "name": "preanswered-intake",
+      "prompt": "하네스 체크. 나는 보통 '해줘'로 시작하고, 스킬은 거의 안 쓰고, 결과는 직접 클릭해서 확인해.",
+      "expected_output": "이미 답한 항목은 기록하고 중복 질문하지 않는다. 남은 질문만 AskUserQuestion으로 진행한 뒤 Self Check에 반영한다.",
       "files": []
     },
     {
       "id": 3,
-      "name": "natural-language-trigger",
-      "prompt": "하네스 뭐가 부족한지 봐줘. 이 프로젝트 전체 진단으로.",
-      "expected_output": "트리거가 /check-harness를 부르고 'project' 또는 'all' 스코프로 판단. Per-Project 서브에이전트 실행 후 CLAUDE.md/rules/hooks 품질 리포트 포함",
+      "name": "no-subagents",
+      "prompt": "하네스 뭐가 부족한지 봐줘. 프로젝트랑 세션 패턴만 가볍게 봐줘.",
+      "expected_output": "Agent나 Task를 쓰지 않고 Read/Grep/Glob/Bash로 프로젝트 표면과 세션 tool-use 메타데이터만 확인한다. HTML은 만들지 않는다.",
       "files": []
     }
   ]
